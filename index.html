@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belal Waheed | Full-Stack Developer Portfolio</title>
+    <meta name="description"
+        content="Belal Waheed — Full-Stack Developer based in Cairo. Explore my projects, skills, and get in touch." />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-dark-950 text-dark-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="text-2xl font-bold tracking-tight group">
+                <span class="text-primary-400 group-hover:text-primary-300 transition-colors">&lt;</span>
+                <span class="text-white">Belal</span>
+                <span class="text-primary-400 group-hover:text-primary-300 transition-colors">/&gt;</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-dark-300">
+                <li><a href="#about" class="nav-link hover:text-primary-400 transition-colors duration-300">About</a>
+                </li>
+                <li><a href="#skills" class="nav-link hover:text-primary-400 transition-colors duration-300">Skills</a>
+                </li>
+                <li><a href="#projects"
+                        class="nav-link hover:text-primary-400 transition-colors duration-300">Projects</a></li>
+                <li><a href="#contact"
+                        class="nav-link hover:text-primary-400 transition-colors duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-toggle" class="md:hidden text-white text-2xl focus:outline-none"
+                aria-label="Toggle menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-dark-900/95 backdrop-blur-xl border-t border-dark-700/50">
+            <ul class="flex flex-col items-center gap-6 py-8 text-base font-medium text-dark-300">
+                <li><a href="#about" class="mobile-link hover:text-primary-400 transition-colors">About</a></li>
+                <li><a href="#skills" class="mobile-link hover:text-primary-400 transition-colors">Skills</a></li>
+                <li><a href="#projects" class="mobile-link hover:text-primary-400 transition-colors">Projects</a></li>
+                <li><a href="#contact" class="mobile-link hover:text-primary-400 transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <!-- Animated Gradient Blobs -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <div class="animate-fade-in-up" style="animation-delay: 0.1s">
+                <p
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-medium mb-8">
+                    <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                    Available for opportunities
+                </p>
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-6 animate-fade-in-up"
+                style="animation-delay: 0.25s">
+                Hi, I'm
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-violet-400 to-fuchsia-400">Belal
+                    Waheed</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-dark-400 max-w-2xl mx-auto mb-10 animate-fade-in-up font-light leading-relaxed"
+                style="animation-delay: 0.4s">
+                A <span class="text-white font-medium">Full-Stack Developer</span> based in Cairo,
+                passionate about crafting beautiful, performant web experiences
+                with modern technologies.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up"
+                style="animation-delay: 0.55s">
+                <a href="#projects"
+                    class="group relative px-8 py-3.5 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/40 hover:-translate-y-0.5">
+                    View My Work
+                    <i class="ph ph-arrow-down ml-2 group-hover:translate-y-0.5 transition-transform inline-block"></i>
+                </a>
+                <a href="#contact"
+                    class="px-8 py-3.5 border border-dark-600 hover:border-primary-500/50 text-dark-200 hover:text-white font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5">
+                    Get In Touch
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-center gap-5 mt-12 animate-fade-in-up" style="animation-delay: 0.7s">
+                <a href="https://github.com/BelalWaheed" target="_blank" rel="noopener" class="social-icon"
+                    aria-label="GitHub">
+                    <i class="ph ph-github-logo text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/belalwhaeed" target="_blank" rel="noopener" class="social-icon"
+                    aria-label="LinkedIn">
+                    <i class="ph ph-linkedin-logo text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/belalwaheed_/" target="_blank" rel="noopener" class="social-icon"
+                    aria-label="Instagram">
+                    <i class="ph ph-instagram-logo text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-dark-500 hover:text-primary-400 transition-colors">
+                <i class="ph ph-caret-double-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section id="about" class="py-24 lg:py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-reveal flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <!-- Avatar -->
+                <div class="relative flex-shrink-0">
+                    <div
+                        class="w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border-2 border-dark-700 shadow-2xl shadow-primary-900/20 rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://avatars.githubusercontent.com/BelalWaheed" alt="Belal Waheed"
+                            class="w-full h-full object-cover"
+                            onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-primary-600 to-violet-600 flex items-center justify-center text-6xl font-black text-white\'>BW</div>'" />
+                    </div>
+                    <div
+                        class="absolute -bottom-3 -right-3 w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center shadow-lg rotate-12">
+                        <i class="ph ph-code text-2xl text-white"></i>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="flex-1 text-center lg:text-left">
+                    <h2 class="section-heading">
+                        <span class="text-primary-400 font-mono text-lg">01.</span>
+                        About Me
+                    </h2>
+                    <p class="text-dark-300 text-lg leading-relaxed mb-6">
+                        I'm a <span class="text-white font-medium">full-stack developer</span> from
+                        <span class="text-white font-medium">Cairo, Egypt</span> with a passion for building
+                        modern, responsive web applications. I enjoy turning complex problems into simple,
+                        elegant solutions.
+                    </p>
+                    <p class="text-dark-400 leading-relaxed mb-8">
+                        From crafting sleek e-commerce platforms to building interactive weather apps and
+                        management systems, I thrive on bringing ideas to life with clean code and
+                        thoughtful design. I'm always learning and exploring new technologies to
+                        stay at the cutting edge of web development.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <div class="stat-card">
+                            <span class="text-3xl font-bold text-primary-400">19+</span>
+                            <span class="text-dark-400 text-sm mt-1">Projects</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="text-3xl font-bold text-primary-400">3+</span>
+                            <span class="text-dark-400 text-sm mt-1">Years Coding</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="text-3xl font-bold text-primary-400">5+</span>
+                            <span class="text-dark-400 text-sm mt-1">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SKILLS ═══════════════════ -->
+    <section id="skills" class="py-24 lg:py-32 px-6 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="section-heading mx-auto text-center">
+                    <span class="text-primary-400 font-mono text-lg">02.</span>
+                    Skills & Technologies
+                </h2>
+                <p class="text-dark-400 max-w-xl mx-auto">
+                    Technologies and tools I use to bring products to life.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 section-reveal">
+                <!-- Skills -->
+                <div class="skill-card" data-delay="0">
+                    <i class="ph ph-file-html text-3xl text-orange-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">HTML5</span>
+                </div>
+                <div class="skill-card" data-delay="50">
+                    <i class="ph ph-file-css text-3xl text-blue-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">CSS3</span>
+                </div>
+                <div class="skill-card" data-delay="100">
+                    <i class="ph ph-file-js text-3xl text-yellow-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">JavaScript</span>
+                </div>
+                <div class="skill-card" data-delay="150">
+                    <i class="ph ph-atom text-3xl text-cyan-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">React</span>
+                </div>
+                <div class="skill-card" data-delay="200">
+                    <i class="ph ph-wind text-3xl text-sky-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">Tailwind CSS</span>
+                </div>
+                <div class="skill-card" data-delay="250">
+                    <i class="ph ph-database text-3xl text-green-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">Node.js</span>
+                </div>
+                <div class="skill-card" data-delay="300">
+                    <i class="ph ph-git-branch text-3xl text-red-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">Git</span>
+                </div>
+                <div class="skill-card" data-delay="350">
+                    <i class="ph ph-figma-logo text-3xl text-purple-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">Figma</span>
+                </div>
+                <div class="skill-card" data-delay="400">
+                    <i class="ph ph-lightning text-3xl text-amber-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">Vite</span>
+                </div>
+                <div class="skill-card" data-delay="450">
+                    <i class="ph ph-browsers text-3xl text-teal-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">REST APIs</span>
+                </div>
+                <div class="skill-card" data-delay="500">
+                    <i class="ph ph-terminal text-3xl text-emerald-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">C#</span>
+                </div>
+                <div class="skill-card" data-delay="550">
+                    <i class="ph ph-hard-drives text-3xl text-rose-400"></i>
+                    <span class="text-sm font-medium text-dark-200 mt-2">SQL Server</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+    <section id="projects" class="py-24 lg:py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="section-heading mx-auto text-center">
+                    <span class="text-primary-400 font-mono text-lg">03.</span>
+                    Featured Projects
+                </h2>
+                <p class="text-dark-400 max-w-xl mx-auto">
+                    A selection of projects I've built — from e-commerce apps to utility tools.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 section-reveal">
+
+                <!-- Project 1 -->
+                <article class="project-card group">
+                    <div class="project-card-header bg-gradient-to-br from-violet-600/20 to-fuchsia-600/20">
+                        <i class="ph ph-storefront text-4xl text-violet-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">East
+                                Perfumes</h3>
+                            <a href="https://github.com/BelalWaheed/east-perfumes" target="_blank" rel="noopener"
+                                class="text-dark-400 hover:text-primary-400 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-dark-400 text-sm leading-relaxed mb-4">
+                            A premium perfume e-commerce platform with a modern UI, product catalog, and shopping
+                            experience.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">Vite</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card group">
+                    <div class="project-card-header bg-gradient-to-br from-primary-600/20 to-blue-600/20">
+                        <i class="ph ph-shopping-cart text-4xl text-primary-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">
+                                eCommerce</h3>
+                            <a href="https://github.com/BelalWaheed/eCommerce" target="_blank" rel="noopener"
+                                class="text-dark-400 hover:text-primary-400 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-dark-400 text-sm leading-relaxed mb-4">
+                            A modern, responsive full-stack e-commerce platform built with React, Vite, and Tailwind
+                            CSS.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">Tailwind</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card group">
+                    <div class="project-card-header bg-gradient-to-br from-red-600/20 to-orange-600/20">
+                        <i class="ph ph-film-strip text-4xl text-red-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">
+                                Moviq</h3>
+                            <a href="https://github.com/BelalWaheed/moviq" target="_blank" rel="noopener"
+                                class="text-dark-400 hover:text-primary-400 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-dark-400 text-sm leading-relaxed mb-4">
+                            A movie browsing app to discover, search, and explore films with a sleek, modern interface.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card group">
+                    <div class="project-card-header bg-gradient-to-br from-cyan-600/20 to-sky-600/20">
+                        <i class="ph ph-cloud-sun text-4xl text-cyan-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">
+                                Weather App</h3>
+                            <a href="https://github.com/BelalWaheed/belal_WeatherAPP" target="_blank" rel="noopener"
+                                class="text-dark-400 hover:text-primary-400 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-dark-400 text-sm leading-relaxed mb-4">
+                            A weather application that fetches real-time weather data with a clean, intuitive UI.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card group">
+                    <div class="project-card-header bg-gradient-to-br from-emerald-600/20 to-green-600/20">
+                        <i class="ph ph-package text-4xl text-emerald-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">
+                                Store Management</h3>
+                            <a href="https://github.com/BelalWaheed/Store-Management-System" target="_blank"
+                                rel="noopener" class="text-dark-400 hover:text-primary-400 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-dark-400 text-sm leading-relaxed mb-4">
+                            A C# Windows Forms management system for handling products, customers, and orders with SQL
+                            Server.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">WinForms</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project-card group">
+                    <div class="project-card-header bg-gradient-to-br from-amber-600/20 to-yellow-600/20">
+                        <i class="ph ph-qr-code text-4xl text-amber-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">QR
+                                Code Generator</h3>
+                            <a href="https://github.com/BelalWaheed/QR-code" target="_blank" rel="noopener"
+                                class="text-dark-400 hover:text-primary-400 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-dark-400 text-sm leading-relaxed mb-4">
+                            A web-based QR code generator that creates scannable codes from any text or URL input.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-12 section-reveal">
+                <a href="https://github.com/BelalWaheed?tab=repositories" target="_blank" rel="noopener"
+                    class="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-500/30 hover:border-primary-500 text-primary-400 hover:text-white hover:bg-primary-600 font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5">
+                    View All Projects on GitHub
+                    <i class="ph ph-arrow-up-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section id="contact" class="py-24 lg:py-32 px-6 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950"></div>
+        <div class="max-w-3xl mx-auto relative z-10 text-center section-reveal">
+            <h2 class="section-heading mx-auto text-center">
+                <span class="text-primary-400 font-mono text-lg">04.</span>
+                Get In Touch
+            </h2>
+            <p class="text-dark-400 text-lg mb-12 max-w-xl mx-auto">
+                I'm currently open to new opportunities. Whether you have a question or just want to say hi, feel free
+                to reach out!
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-4 mb-12">
+                <a href="https://github.com/BelalWaheed" target="_blank" rel="noopener" class="contact-card group">
+                    <i
+                        class="ph ph-github-logo text-3xl text-dark-400 group-hover:text-white transition-colors mb-3"></i>
+                    <span
+                        class="text-sm font-medium text-dark-300 group-hover:text-white transition-colors">GitHub</span>
+                    <span class="text-xs text-dark-500 mt-1">@BelalWaheed</span>
+                </a>
+                <a href="https://www.linkedin.com/in/belalwhaeed" target="_blank" rel="noopener"
+                    class="contact-card group">
+                    <i
+                        class="ph ph-linkedin-logo text-3xl text-dark-400 group-hover:text-blue-400 transition-colors mb-3"></i>
+                    <span
+                        class="text-sm font-medium text-dark-300 group-hover:text-white transition-colors">LinkedIn</span>
+                    <span class="text-xs text-dark-500 mt-1">Belal Waheed</span>
+                </a>
+                <a href="https://www.instagram.com/belalwaheed_/" target="_blank" rel="noopener"
+                    class="contact-card group">
+                    <i
+                        class="ph ph-instagram-logo text-3xl text-dark-400 group-hover:text-pink-400 transition-colors mb-3"></i>
+                    <span
+                        class="text-sm font-medium text-dark-300 group-hover:text-white transition-colors">Instagram</span>
+                    <span class="text-xs text-dark-500 mt-1">@belalwaheed_</span>
+                </a>
+            </div>
+
+            <a href="mailto:belalwaheed000@gmail.com"
+                class="inline-flex items-center gap-2 px-10 py-4 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/40 hover:-translate-y-0.5 text-lg">
+                <i class="ph ph-envelope-simple"></i>
+                Say Hello
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="py-8 px-6 border-t border-dark-800/50">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-dark-500 text-sm">
+                &copy; 2026 Belal Waheed. Built with
+                <i class="ph-fill ph-heart text-red-500 mx-0.5 inline-block"></i>
+            </p>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/BelalWaheed" target="_blank" rel="noopener"
+                    class="text-dark-500 hover:text-primary-400 transition-colors">
+                    <i class="ph ph-github-logo text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/belalwhaeed" target="_blank" rel="noopener"
+                    class="text-dark-500 hover:text-primary-400 transition-colors">
+                    <i class="ph ph-linkedin-logo text-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/belalwaheed_/" target="_blank" rel="noopener"
+                    class="text-dark-500 hover:text-primary-400 transition-colors">
+                    <i class="ph ph-instagram-logo text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
