@@ -1,11 +1,5 @@
-/* ═══════════════════════════════════════════════════
-   PORTFOLIO STYLES — Belal Waheed
-   ═══════════════════════════════════════════════════ */
-
 /* ── Reset & Base ── */
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,7 +43,7 @@ html {
   border-radius: 50%;
   filter: blur(120px);
   opacity: 0.4;
-  animation: blob-float 20s ease-in-out infinite;
+  animation: blob-float 7s ease-in-out infinite;
   pointer-events: none;
 }
 

@@ -1,7 +1,4 @@
-/* ═══════════════════════════════════════════════════
-   PORTFOLIO JS — Belal Waheed
-   ═══════════════════════════════════════════════════ */
-
+// when the document structure is ready , now you can access the elements
 document.addEventListener("DOMContentLoaded", () => {
   // ── Navbar Scroll Effect ──
   const navbar = document.getElementById("navbar");
@@ -40,17 +37,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Scroll Reveal Animation ──
   const revealElements = document.querySelectorAll(".section-reveal");
 
+  // A browser API that detects when an element enters or leaves the viewport.
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("revealed");
+
+          // remove it after it done its animation
           revealObserver.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.1,
+      threshold: 0.1, // triger if 10% visible
       rootMargin: "0px 0px -60px 0px",
     },
   );
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   revealElements.forEach((el) => revealObserver.observe(el));
 
   // ── Active Nav Link Highlighting ──
-  const sections = document.querySelectorAll("section[id]");
+  const sections = document.querySelectorAll("section[id]"); // select all element that has an id
   const navLinks = document.querySelectorAll(".nav-link");
 
   const activateNavLink = () => {
@@ -67,15 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute("id");
+      const sectionId = section.id;
 
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLinks.forEach((link) => {
-          link.classList.remove("text-primary-400");
-          if (link.getAttribute("href") === `#${sectionId}`) {
-            link.classList.add("text-primary-400");
-          }
-        });
+        document
+          .querySelector(".nav-link.text-primary-400")
+          ?.classList.remove("text-primary-400");
+
+        document
+          .querySelector(`.nav-link[href="#${sectionId}"]`)
+          ?.classList.add("text-primary-400");
       }
     });
   };
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
       glowY += (mouseY - glowY) * 0.15;
       glow.style.left = glowX + "px";
       glow.style.top = glowY + "px";
-      requestAnimationFrame(animateGlow);
+      requestAnimationFrame(animateGlow); //Runs at ~60fps
     };
     animateGlow();
   }
